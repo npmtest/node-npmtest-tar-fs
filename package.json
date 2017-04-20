@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-tar-fs",     "homepage": "https://github.com/npmtest/node-npmtest-tar-fs",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-tar-fs.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [tar-fs (v1.15.2)](https://github.com/mafintosh/tar-fs)  [![npm package](https://img.shields.io/npm/v/npmtest-tar-fs.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-tar-fs) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-tar-fs.svg)](https://travis-ci.org/npmtest/node-npmtest-tar-fs)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-tar-fs",
+    "keywords": [
+        "coverage",
+        "test",
+        "tar-fs"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_tar_fs.js",
+    "name": "npmtest-tar-fs",
+    "nameAlias": "npmtest_tar_fs",
+    "nameOriginal": "npmtest-tar-fs",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-tar-fs.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
